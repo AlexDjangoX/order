@@ -31,21 +31,30 @@ class Butler {
 
 // A butler - thankfully polite by default
 const butler = new Butler();
+butler.dinner("Alex");
 
 // Announce dinner
 console.log("Polite Butler");
 butler.dinner("Carlo");
 
-// This butler can also be made cheeky!
+// // This butler can also be made cheeky!
 console.log();
 console.log("Now Cheeky Butler");
 
+const CheekyButler = new Butler(new Cheeky());
+CheekyButler.dinner("zzzzzzzzz");
+
+const butlerZ = new Butler();
 const cheeky = new Cheeky();
-butler.dinner("Shahzad", cheeky);
 
-// A butler who is cheeky by default!
-console.log();
-console.log("Default Cheeky Butler");
+butler.dinner("xxxxxx", cheeky);
 
-const cheekyButler = new Butler(new Cheeky());
-cheekyButler.dinner("YOU LOT");
+// const cheeky = new Cheeky();
+// butler.dinner("Shahzad", cheeky);
+
+// // A butler who is cheeky by default!
+// console.log();
+// console.log("Default Cheeky Butler");
+
+// const cheekyButler = new Butler(new Cheeky());
+// cheekyButler.dinner("YOU LOT");

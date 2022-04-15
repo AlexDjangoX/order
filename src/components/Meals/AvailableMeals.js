@@ -1,16 +1,26 @@
 import React from "react";
 import { DUMMY_MEALS } from "../../assets/dummy-data";
-
-import classes from "./AvailableMeals.module.css";
+import Card from "../UI/Card";
+import classes from "../Meals/AvailableMeals.module.css";
+import MealItem from "./MealItem/MealItem";
 
 const AvailableMeals = () => {
-  console.log(DUMMY_MEALS);
   const mealsList = DUMMY_MEALS.map((meal) => {
-    return <li>{meal.name}</li>;
+    return (
+      <MealItem
+        key={meal.id}
+        name={meal.name}
+        description={meal.description}
+        price={meal.price}
+      />
+    );
   });
+  console.log(mealsList);
   return (
     <section className={classes.meals}>
-      <ul>{mealsList}</ul>
+      <Card>
+        <ul>{mealsList}</ul>
+      </Card>
     </section>
   );
 };
