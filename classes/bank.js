@@ -26,8 +26,13 @@ class BaseBankExporter {
   }
 
   export(filePath) {}
-}
 
+  save(filePath, contents) {
+    this.fileWriter.openFile(filePath);
+    this.fileWriter.addContentsToFile(contents);
+    this.fileWriter.saveFile();
+  }
+}
 module.exports = BaseBankExporter;
 
 // csvexporter.js

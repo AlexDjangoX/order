@@ -3,19 +3,19 @@
 
 class Item {
   name() {
-    return "I am an item";
+    return "I am method, available to any instance of the Item class";
   }
 }
 
 class Calculator {
   calculate() {
-    return "calculate something";
+    return "I am a calculator in the Calculator Class";
   }
 }
 
 class Child {
   calculate() {
-    return "calculate something else";
+    return "I am a calculator in the Child Class";
   }
 }
 

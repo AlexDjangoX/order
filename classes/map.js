@@ -462,3 +462,134 @@ String.prototype.toJadenCase___ = function () {
     })
     .join(" ");
 };
+
+function openOrSenior_(data) {
+  let openSenior = [];
+  for (let innerArray of data) {
+    if (innerArray[0] >= 55 && innerArray[1] > 7) {
+      openSenior.push("Senior");
+    } else {
+      openSenior.push("Open");
+    }
+  }
+  return openSenior;
+}
+
+const inputIntoOpenSenior = [
+  [18, 20],
+  [45, 2],
+  [61, 12],
+  [37, 6],
+  [21, 21],
+  [78, 9],
+];
+
+function openOrSenior__(data) {
+  return data.map(([age, handicap]) =>
+    age >= 55 && handicap > 7 ? "Senior" : "Open"
+  );
+}
+
+function openOrSenior(data) {
+  return data.map((el) => {
+    return el[0] >= 55 && el[1] > 7 ? "Senior" : "Open";
+  });
+}
+
+console.log(openOrSenior(inputIntoOpenSenior));
+
+// r**n = x
+// r = x** 1/n
+
+function root(x, n) {
+  return x ** (1 / n);
+}
+
+function points_(games) {
+  let scoreAcuum = 0;
+  for (let string of games) {
+    console.log(`${+string[0]}:${+string[2]} accum=${scoreAcuum}`);
+
+    let x = +string[0];
+    let y = +string[2];
+    if (x > y) {
+      scoreAcuum += 3;
+      continue;
+    }
+    if (x < y) {
+      scoreAcuum += 0;
+      continue;
+    }
+    if ((x = y)) {
+      scoreAcuum += 1;
+    }
+    if (x === 0 && y === 0) scoreAcuum += 1;
+  }
+
+  return scoreAcuum;
+}
+
+let pointsGame = [
+  "1:0",
+  "2:0",
+  "3:0",
+  "4:0",
+  "2:1",
+  "3:1",
+  "4:1",
+  "3:2",
+  "4:2",
+  "4:3",
+];
+
+const array12 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array12.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+// expected output: 10
+
+function points(games) {
+  return games.reduce((output, current) => {
+    return (output +=
+      current[0] > current[2] ? 3 : current[0] === current[2] ? 1 : 0);
+  }, 0);
+}
+
+console.log(points(pointsGame));
+
+//creating a function Land()
+function Land() {
+  this.area = "";
+  this.status = "for Sale";
+}
+//Setting status open for sale
+Land.prototype.open = function () {
+  this.status = "Open for Sale";
+  return this;
+};
+//Setting status not for sale
+Land.prototype.close = function () {
+  this.status = "Not for Sale";
+  return this;
+};
+//Setting Parameters
+Land.prototype.setParams = function (area) {
+  this.area = area;
+  return this;
+};
+//printing land status
+Land.prototype.doorStatus = function () {
+  console.log("The", this.area, "Land is", this.status);
+  return this;
+};
+//creating a land object
+var land = new Land("500009");
+console.log(land.status);
+
+land.setParams("500 sq ft").close().doorStatus().open().doorStatus();
