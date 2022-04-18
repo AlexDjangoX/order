@@ -593,3 +593,75 @@ var land = new Land("500009");
 console.log(land.status);
 
 land.setParams("500 sq ft").close().doorStatus().open().doorStatus();
+
+function countBy(x, n) {
+  let z = [];
+  for (let j = 1; j < n + 1; j++) {
+    z.push(x * j);
+  }
+
+  return z;
+}
+
+console.log(countBy(2, 5));
+
+function solution_z(nums) {
+  if (nums === [] || nums === null) {
+    return [];
+  } else {
+    nums.sort((a, b) => a - b);
+  }
+  return nums;
+}
+
+function sol(nums) {
+  return nums !== null ? nums.sort((a, b) => a - b) : [];
+}
+
+function sol_(nums) {
+  return nums ? nums.sort((a, b) => a - b) : [];
+}
+
+function minMax(arr) {
+  return [Math.min(...arr), Math.max(...arr)];
+}
+
+function rowSumOddNumbers(n) {
+  return n * n * n;
+}
+console.log(rowSumOddNumbers(30));
+
+function noSpace(x) {
+  return x.split(" ").join("");
+}
+
+function solve(arr) {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let countArray = [];
+
+  for (let x = 0; x < arr.length; x++) {
+    let count = 0;
+    for (let y = 0; y < arr[x].length; y++) {
+      console.log(alphabet[y]);
+      if (arr[x][y].toLowerCase() === alphabet[y]) {
+        count += 1;
+      }
+    }
+    countArray.push(count);
+  }
+
+  return countArray;
+}
+
+solve(["abode", "ABc", "xyzD"]);
+
+function solve_(arr) {
+  var alphabeth = "abcdefghijklmnopqrstuvwxyz";
+  return arr.map(
+    (x) =>
+      x
+        .toLowerCase()
+        .split("")
+        .filter((y, i) => i == alphabeth.indexOf(y)).length
+  );
+}
