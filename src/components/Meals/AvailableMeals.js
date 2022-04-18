@@ -4,7 +4,7 @@ import Card from "../UI/Card";
 import classes from "../Meals/AvailableMeals.module.css";
 import MealItem from "./MealItem/MealItem";
 
-// props.key, props.name, props.description, props.price, props.id
+// props.key, props.name, props.description, props.price, props.id => MealItem
 
 const AvailableMeals = () => {
   const mealsList = DUMMY_MEALS.map((meal) => {
