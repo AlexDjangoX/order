@@ -653,15 +653,29 @@ function solve(arr) {
   return countArray;
 }
 
-solve(["abode", "ABc", "xyzD"]);
+console.log("657", solve(["abode", "ABc", "xyzD"]));
 
 function solve_(arr) {
-  var alphabeth = "abcdefghijklmnopqrstuvwxyz";
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
   return arr.map(
     (x) =>
       x
         .toLowerCase()
         .split("")
-        .filter((y, i) => i == alphabeth.indexOf(y)).length
+        .filter((y, i) => i === alphabet.indexOf(y)).length
   );
 }
+
+function solve__(arr) {
+  let alpha = "abcdefghijklmnopqrstuvwxyz";
+  return arr.map((x) => {
+    return x
+      .toLowerCase()
+      .split("")
+      .filter((letter, index) => {
+        return letter === alpha[index];
+      }).length;
+  });
+}
+
+console.log("681", solve__(["abode", "ABc", "xyzD"]));

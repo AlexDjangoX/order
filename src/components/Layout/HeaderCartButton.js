@@ -5,6 +5,8 @@ import CartContext from "../../store/cart-context";
 import CartIcon from "../Cart/CartIcon";
 import classes from "./HeaderCartButton.module.css";
 
+// items [{ id: "c1", name: "Sushi", amount: 2, price: 12.99 },.........]
+
 const HeaderCartButton = (props) => {
   const { items } = useContext(CartContext);
   const numberOfCartItems = items.reduce((currentNumber, item) => {
